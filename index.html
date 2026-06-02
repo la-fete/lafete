@@ -3,15 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="theme-color" content="#0ea5e9">
+  <meta name="theme-color" content="#0a0a12">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="إجازات زفتى">
-  <title>إجازات مرشحة زفتى</title>
+  <meta name="apple-mobile-web-app-title" content="لافيت">
+  <title>لافيت - نظام إدارة المخزون</title>
   <link rel="manifest" id="pwaManifest" href="data:application/manifest+json,{}">
   <script>
-    // ===== Manifest with embedded icons (data URIs) =====
-    (function() {
+    (function(){
       function genIcon(size) {
         var c=document.createElement('canvas'),s=size;
         c.width=c.height=s; var ctx=c.getContext('2d'), r=s*0.22;
@@ -21,35 +20,14 @@
         ctx.quadraticCurveTo(0,s,0,s-r); ctx.lineTo(0,r);
         ctx.quadraticCurveTo(0,0,r,0); ctx.closePath();
         var bg=ctx.createLinearGradient(0,0,0,s);
-        bg.addColorStop(0,'#0ea5e9');bg.addColorStop(0.5,'#2563eb');bg.addColorStop(1,'#1e40af');
+        bg.addColorStop(0,'#0a0a12');bg.addColorStop(0.5,'#0f3460');bg.addColorStop(1,'#2196f3');
         ctx.fillStyle=bg;ctx.fill();
-
-        ctx.beginPath();
-        ctx.moveTo(0,s*0.78); ctx.quadraticCurveTo(s*0.25,s*0.70,s*0.50,s*0.76);
-        ctx.quadraticCurveTo(s*0.75,s*0.82,s,s*0.74);
-        ctx.lineTo(s,s); ctx.lineTo(0,s); ctx.closePath();
-        ctx.fillStyle='rgba(255,255,255,0.1)';ctx.fill();
-
-        var cx=s*0.25,cy=s*0.17,cw=s*0.50,ch=s*0.50;
-        ctx.beginPath(); ctx.roundRect(cx,cy+ch*0.12,cw,ch*0.88,8);
-        ctx.fillStyle='rgba(255,255,255,0.92)';ctx.fill();
-        ctx.beginPath(); ctx.roundRect(cx,cy+ch*0.12,cw,ch*0.22,8);
-        ctx.fillStyle='rgba(255,255,255,0.2)';ctx.fill();
-
-        ctx.strokeStyle='rgba(255,255,255,0.5)';ctx.lineWidth=2;
-        for(var x of [cx+cw*0.12,cx+cw*0.5,cx+cw*0.88]){ctx.beginPath();ctx.arc(x,cy+ch*0.12,ch*0.06,0,Math.PI*2);ctx.stroke();}
-
-        var gx=cx+ch*0.08,gy=cy+ch*0.42,gw=cw-ch*0.16,gh=ch-ch*0.50;
-        ctx.strokeStyle='#cbd5e1';ctx.lineWidth=1;
-        for(var i=1;i<4;i++){ctx.beginPath();ctx.moveTo(gx,gy+gh*i/4);ctx.lineTo(gx+gw,gy+gh*i/4);ctx.stroke();}
-        for(var x of [gx+gw/3,gx+gw*2/3]){ctx.beginPath();ctx.moveTo(x,gy);ctx.lineTo(x,gy+gh);ctx.stroke();}
-
-        ctx.beginPath();ctx.strokeStyle='#16a34a';ctx.lineWidth=4;ctx.lineCap='round';ctx.lineJoin='round';
-        ctx.moveTo(cx+cw*0.20,cy+ch*0.56);ctx.lineTo(cx+cw*0.35,cy+ch*0.72);ctx.lineTo(cx+cw*0.72,cy+ch*0.40);ctx.stroke();
-
-        ctx.fillStyle='rgba(255,255,255,0.10)';ctx.textAlign='center';ctx.textBaseline='middle';
-        ctx.font='bold '+(s*0.38)+'px system-ui,sans-serif';
-        ctx.fillText('م',s/2,s*0.86);
+        ctx.fillStyle='rgba(255,255,255,0.92)';ctx.textAlign='center';ctx.textBaseline='middle';
+        ctx.font='bold '+(s*0.46)+'px system-ui,sans-serif';
+        ctx.fillText('ل',s/2,s*0.52);
+        ctx.font='bold '+(s*0.24)+'px system-ui,sans-serif';
+        ctx.fillStyle='rgba(255,255,255,0.35)';
+        ctx.fillText('LA FÊTE',s/2,s*0.84);
         return c.toDataURL('image/png');
       }
       var i192=genIcon(192),i512=genIcon(512);
@@ -57,10 +35,10 @@
       lnk.rel='apple-touch-icon';lnk.href=i512;
       document.head.appendChild(lnk);
       var m={
-        name:'إجازات مرشحة زفتى',short_name:'إجازات زفتى',
-        description:'نظام إدارة الإجازات - محطة مياه زفتى',
+        name:'لافيت - نظام إدارة المخزون',short_name:'لافيت',
+        description:'نظام إدارة مخزون الأفراح',
         start_url:'.',display:'standalone',
-        background_color:'#1e293b',theme_color:'#0ea5e9',
+        background_color:'#05050a',theme_color:'#0a0a12',
         dir:'rtl',lang:'ar',
         icons:[{src:i192,sizes:'192x192',type:'image/png'},{src:i512,sizes:'512x512',type:'image/png',purpose:'any maskable'}]
       };
@@ -70,83 +48,83 @@
   </script>
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
-    html,body{width:100%;height:100%;overflow:hidden;background:#0ea5e9;font-family:system-ui,sans-serif}
+    html,body{width:100%;height:100%;overflow:hidden;background:#0a0a12;font-family:system-ui,sans-serif}
     #splash{
       position:fixed;inset:0;z-index:9999;
-      background:linear-gradient(135deg,#0ea5e9,#1e40af);
+      background:linear-gradient(135deg,#0a0a12,#0f3460);
       display:flex;flex-direction:column;align-items:center;justify-content:center;
       transition:opacity .5s ease,transform .5s ease
     }
     #splash.hide{opacity:0;transform:scale(1.05);pointer-events:none}
     .sp-icon{
       width:96px;height:96px;border-radius:24px;
-      background:linear-gradient(135deg,#fff,#e0f2fe);
+      background:linear-gradient(135deg,#2196f3,#0f3460);
       display:flex;align-items:center;justify-content:center;
-      font-size:56px;color:#0ea5e9;font-weight:bold;margin-bottom:20px;
-      box-shadow:0 20px 60px rgba(14,165,233,.3);
+      font-size:48px;color:#fff;font-weight:bold;margin-bottom:20px;
+      box-shadow:0 20px 60px rgba(33,150,243,.3);
       animation:pulse 2s infinite
     }
     @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
-    .sp-title{color:#fff;font-size:22px;font-weight:700;margin-bottom:8px}
-    .sp-sub{color:#94a3b8;font-size:13px;margin-bottom:30px}
-    .sp-load{width:120px;height:3px;background:#334155;border-radius:4px;overflow:hidden}
-    .sp-bar{height:100%;background:linear-gradient(90deg,#7dd3fc,#fff);animation:load 1.5s forwards}
+    .sp-title{color:#fff;font-size:22px;font-weight:700;margin-bottom:4px}
+    .sp-sub{color:#90caf9;font-size:12px;margin-bottom:30px}
+    .sp-load{width:120px;height:3px;background:#1a1a3e;border-radius:4px;overflow:hidden}
+    .sp-bar{height:100%;background:linear-gradient(90deg,#2196f3,#fff);animation:load 1.5s forwards}
     @keyframes load{0%{width:0%}100%{width:100%}}
     iframe{width:100%;height:100%;border:none;display:none}
     iframe.show{display:block}
     #installBanner{
       position:fixed;bottom:0;left:0;right:0;z-index:10001;
-      background:rgba(15,23,42,.95);backdrop-filter:blur(12px);
+      background:rgba(10,10,18,.95);backdrop-filter:blur(12px);
       padding:16px 20px 20px;border-radius:20px 20px 0 0;
       transform:translateY(100%);transition:transform .4s cubic-bezier(.22,1,.36,1),visibility .4s,opacity .4s;
-      box-shadow:0 -8px 40px rgba(0,0,0,.3);
+      box-shadow:0 -8px 40px rgba(0,0,0,.5);
       visibility:hidden;opacity:0;display:flex;align-items:center;gap:14px
     }
     #installBanner.show{visibility:visible;opacity:1;transform:translateY(0)}
     #installBanner .ib-icon{
       width:56px;height:56px;border-radius:14px;flex-shrink:0;
-      background:linear-gradient(135deg,#0ea5e9,#2563eb);
+      background:linear-gradient(135deg,#2196f3,#0f3460);
       display:flex;align-items:center;justify-content:center;
-      font-size:30px;color:#fff;font-weight:bold
+      font-size:28px;color:#fff;font-weight:bold
     }
     #installBanner .ib-text{flex:1;min-width:0}
     #installBanner .ib-name{color:#fff;font-size:15px;font-weight:700}
-    #installBanner .ib-desc{color:#94a3b8;font-size:12px;margin-top:2px}
+    #installBanner .ib-desc{color:#90caf9;font-size:12px;margin-top:2px}
     #installBanner .ib-install{
-      background:#0ea5e9;color:#fff;border:none;border-radius:12px;
+      background:#2196f3;color:#fff;border:none;border-radius:12px;
       padding:10px 20px;font-size:14px;font-weight:700;cursor:pointer;
       white-space:nowrap;transition:background .2s
     }
-    #installBanner .ib-install:hover{background:#0284c7}
+    #installBanner .ib-install:hover{background:#1976d2}
     #installBanner .ib-close{
       background:none;border:none;color:#64748b;font-size:20px;
       cursor:pointer;padding:4px;line-height:1;flex-shrink:0
     }
     #installBanner .ib-close:hover{color:#fff}
     #offline{
-      position:fixed;inset:0;z-index:10000;background:#1e293b;
+      position:fixed;inset:0;z-index:10000;background:#0a0a12;
       display:none;flex-direction:column;align-items:center;justify-content:center;
       color:#fff;text-align:center;padding:40px
     }
     #offline.show{display:flex}
     .off-icon{font-size:64px;margin-bottom:20px}
     .retry-btn{
-      margin-top:24px;padding:12px 32px;background:#0ea5e9;color:#fff;
+      margin-top:24px;padding:12px 32px;background:#2196f3;color:#fff;
       border:none;border-radius:12px;font-size:16px;cursor:pointer;font-weight:bold
     }
   </style>
 </head>
 <body>
   <div id="splash">
-    <div class="sp-icon">م</div>
-    <div class="sp-title">إجازات مرشحة زفتى</div>
-    <div class="sp-sub">نظام إدارة الإجازات - محطة مياه زفتى</div>
+    <div class="sp-icon">ل</div>
+    <div class="sp-title">لافيت</div>
+    <div class="sp-sub">نظام إدارة المخزون - La Fête</div>
     <div class="sp-load"><div class="sp-bar"></div></div>
   </div>
   <div id="installBanner">
-    <div class="ib-icon">م</div>
+    <div class="ib-icon">ل</div>
     <div class="ib-text">
-      <div class="ib-name">إجازات مرشحة زفتى</div>
+      <div class="ib-name">لافيت</div>
       <div class="ib-desc">أضف التطبيق إلى شاشتك الرئيسية للوصول السريع</div>
     </div>
     <button class="ib-install" id="installBtn">تثبيت</button>
@@ -155,12 +133,12 @@
   <div id="offline">
     <div class="off-icon">📡</div>
     <h2 style="margin-bottom:12px">لا يوجد اتصال</h2>
-    <p style="color:#94a3b8">يتطلب التطبيق اتصالاً بالإنترنت</p>
+    <p style="color:#90caf9">يتطلب التطبيق اتصالاً بالإنترنت</p>
     <button class="retry-btn" onclick="location.reload()">إعادة المحاولة</button>
   </div>
   <iframe id="appFrame" sandbox="allow-scripts allow-forms allow-same-origin allow-popups"></iframe>
   <script>
-    // ===== التطبيق الرئيسي =====
+    // ===== Load App in Iframe =====
     (function(){
       var frame=document.getElementById('appFrame');
       var baseUrl='https://script.google.com/macros/s/AKfycbwsGQyMPDL7Yt68dbDo-RGsejkqPj3FT2EEUjfuIx1UVAH4gAJFz0hjslOjzRfWDkRR/exec';
@@ -204,74 +182,7 @@
       }
     })();
 
-    // ===== Firebase Cloud Messaging (إشعارات) =====
-    (function(){
-      try {
-        import('https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js').then(function(appMod) {
-          import('https://www.gstatic.com/firebasejs/10.7.1/firebase-messaging-compat.js').then(function(msgMod) {
-            var app = appMod.default.initializeApp({
-              apiKey: "AIzaSyDmopMyvmaGH9OvaHmoNVwk_oUg9eySgBc",
-              authDomain: "zeft-notifications.firebaseapp.com",
-              projectId: "zeft-notifications",
-              messagingSenderId: "96227647786",
-              appId: "1:96227647786:web:ae4cf7c1d1aa7b7036fe53"
-            });
-            var messaging = appMod.default.messaging(app);
-            Notification.requestPermission().then(function(perm) {
-              if (perm === 'granted') {
-                messaging.getToken({vapidKey: "BAAe2fMF83A5p2TQUG6RZK3R6PLPM7s7AWGNQUQKQtR6FdbgGQryyG3mWssm4nqOmqau3tcdflBfhjyTrqFGzAs"}).then(function(token) {
-                  console.log('FCM token:', token);
-                  localStorage.setItem('fcm_token', token);
-                  var frame = document.getElementById('appFrame');
-                  if (frame && frame.contentWindow) {
-                    frame.contentWindow.postMessage({type:'fcm_token', token:token}, '*');
-                  }
-                }).catch(function(err){console.log('FCM token error:',err)});
-              }
-            });
-            messaging.onMessage(function(payload) {
-              var notif = payload.notification || {};
-              if (Notification.permission === 'granted') {
-                new Notification(notif.title || 'إجازات مرشحة زفتى', {
-                  body: notif.body || '',
-                  icon: window.__pwaIcons ? window.__pwaIcons[512] : undefined
-                });
-              }
-            });
-          });
-        });
-      } catch(e) { console.log('FCM init error:', e); }
-    })();
-
-    // ===== طلب الموقع عند تحميل الصفحة =====
-    (function() {
-      if ('geolocation' in navigator) {
-        navigator.geolocation.getCurrentPosition(function(pos) {
-          localStorage.setItem('user_lat', pos.coords.latitude);
-          localStorage.setItem('user_lng', pos.coords.longitude);
-        }, function() {}, {timeout:10000, enableHighAccuracy:true});
-      }
-    })();
-
-    // ===== استقبال أحداث من الـ iframe =====
-    window.addEventListener('message', function(e) {
-      if (e.data && e.data.type === 'get_device_info') {
-        var info = {
-          type: 'device_info',
-          fcmToken: localStorage.getItem('fcm_token') || '',
-          lat: localStorage.getItem('user_lat') || '',
-          lng: localStorage.getItem('user_lng') || '',
-          deviceType: navigator.userAgentData?.model || navigator.platform || '',
-          os: navigator.userAgentData?.platform || navigator.platform || '',
-          browser: navigator.userAgent.match(/Chrome\/([\d.]+)/)?.[0] || navigator.userAgent,
-          screenSize: screen.width + 'x' + screen.height,
-          resolution: screen.pixelDepth + 'bit'
-        };
-        e.source.postMessage(info, '*');
-      }
-    });
-
-    // ===== اتصال / قطع =====
+    // ===== Connection Status =====
     window.addEventListener('offline',function(){document.getElementById('offline').classList.add('show')});
     window.addEventListener('online',function(){document.getElementById('offline').classList.remove('show')});
   </script>
